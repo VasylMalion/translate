@@ -1,0 +1,115 @@
+@mixin textarea {
+    height: auto;
+    min-height: 130px;
+    overflow: hidden;
+    width: 100%;
+    font-size: 20px;
+    resize: none;
+    white-space: normal;
+    border: none;
+    outline: none;
+}
+
+.content {
+
+    display: grid;
+    justify-content: center;
+
+
+    .translate {
+        display: flex;
+
+        .translate__textarea-first {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #bab8b9;
+            height: auto;
+            padding: 7px 7px 0px 7px;
+            margin: 5px 10px 20px 20px;
+            min-width: 400px;
+            max-width: 500px;
+
+            .translate__initial-textarea {
+                @include textarea
+            }
+
+            &::placeholder {
+                font-size: 20px;
+                color: #bab8b9;
+            }
+
+            .translate__icons {
+                display: flex;
+                justify-content: space-between;
+                color: #bab8b9;
+                font-size: 20px;
+
+                & span {
+                    cursor: pointer;
+                }
+            }
+
+            .translate__bottom {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                border-top: 1px dotted #bab8b9;
+                padding: 5px 0px;
+                min-height: 32px;
+
+                & button {
+                    cursor: pointer;
+                    padding: 6px 24px;
+                    font-size: 14px;
+                    font-weight: normal;
+                    line-height: 1.42857143;
+                    border: none;
+                    border-radius: 5px;
+                    outline: none;
+                    background: #00ab5b;
+                    color: white;
+                }
+
+                .translate__maxLen {
+                    font-size: 16px;
+                    color: #bab8b9;
+                    padding: 2px 0px 0px 8px;
+                }
+            }
+        }
+
+        .translate__textarea-last {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #bab8b9;
+            background: #f6f6f6;
+            height: auto;
+            padding: 7px 7px 0px 7px;
+            margin: 5px 20px 20px 10px;
+            min-width: 400px;
+            max-width: 500px;
+
+            & span {
+                display: flex;
+                height: 26.4px;
+                justify-content: flex-end;
+                color: #bab8b9;
+                font-size: 20px;
+
+                .translate__btnCopy-last {
+                    cursor: pointer;
+                }
+            }
+
+            .translate__textarea-translate {
+                @include textarea;
+                background: #f6f6f6;
+            }
+
+            .translate__bottom {
+                border-top: 1px dotted #bab8b9;
+            }
+        }
+    }
+}
+
